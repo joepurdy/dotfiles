@@ -1,0 +1,14 @@
+fancy_echo "Updating oh-my-zsh ..."
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+fancy_echo "Updating JavaScript tools ..."
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+fancy_echo "Configuring Node.js ..."
+find_latest_node() {
+  nvm ls-remote | tail -1
+}
+
+node_version="$(find_latest_node)"
+
+nvm install "$node_version"
+nvm use "$node_version"
