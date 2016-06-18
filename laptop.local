@@ -26,3 +26,6 @@ nvm use "$node_version"
 
 fancy_echo "Updating gems ..."
 gem_install_or_update 'rails'
+
+fancy_echo "Updating python packages ..."
+pip install boto
