@@ -1,5 +1,6 @@
 # Cmd line
 alias c='clear'
+alias cls='clear'
 
 # Productivity
 alias t='todo.sh'
@@ -19,7 +20,7 @@ alias laranew='composer create-project --prefer-dist laravel/laravel'
 
 # Servers
 alias pbp-p-web01='ssh -i $PBP_SSH $web01'
-alias pbp-c-cachet01='ssh -i $PBP_SSH $cachet01'
 alias pbp-c-git01='ssh -i $PBP_SSH $git01'
+alias sor-p-plesk01='ssh -i $SUNWOLF_SSH $plesk01'
 alias rsync-pbp-p-web01='rsync -avz -e "ssh -i $PBP_SSH" $web01:~/rsync ~/ServerHome/pbp-c-web01/'
 alias rsync-pbp-c-git01='rsync -avz -e "ssh -i $PBP_SSH" $git01:~/rsync ~/ServerHome/pbp-c-git01/'
