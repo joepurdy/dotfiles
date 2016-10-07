@@ -124,6 +124,9 @@ export PATH="/usr/local/share/dotnet:$PATH"
 # Android Configuration
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
+# Go Configuration
+export GOPATH=$HOME/Code/Go
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
