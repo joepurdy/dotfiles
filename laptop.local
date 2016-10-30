@@ -6,7 +6,7 @@ brew_install_or_update 'mysql'
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
-brew_install_or_update 'php56'
+brew_install_or_update 'php70'
 
 fancy_echo "Updating oh-my-zsh ..."
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -22,7 +22,9 @@ find_latest_node() {
 node_version="$(find_latest_node)"
 
 nvm install "$node_version"
-nvm use "$node_version"
+nvm alias latest "$node_version"
+nvm use latest
+npm i -g yarn
 
 fancy_echo "Updating gems ..."
 gem_install_or_update 'rails'
