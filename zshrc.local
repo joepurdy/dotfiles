@@ -126,7 +126,17 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # Go Configuration
 export GOPATH=$HOME/Code/Go
+export PATH="$PATH:$GOPATH/bin"
 
+# JavaScript Configuration
+export NVM_DIR="/Users/joepurdy/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+## Yarn Config
+export PATH="$PATH:$HOME/.yarn/bin"
+
+# Java
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -146,9 +156,3 @@ export EC2_INI_PATH=/etc/ansible/ec2.ini
 # For a full list of active aliases, run `alias`.
 
 alias zshconfig="vim ~/.zshrc.local"
-
-export NVM_DIR="/Users/joepurdy/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Java
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
