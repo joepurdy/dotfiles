@@ -1,11 +1,10 @@
 fancy_echo "Updating cio brewskis ..."
+brew bundle --file=- <<EOF
 brew "mysql@5.7"
 brew "snappy"
-brew "watchman"
 brew "autoconf"
-brew "stripe/stripe-mock/stripe-mock"
-# start a stripe-mock service at login
-brew services start stripe-mock
+brew "stripe/stripe-mock/stripe-mock" restart_service: :changed
+EOF
 
 fancy_echo "Updating gems ..."
 gem_install_or_update 'tmuxinator'
