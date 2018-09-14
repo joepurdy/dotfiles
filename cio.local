@@ -2,4 +2,4 @@ export CIOSRC='$HOME/devel/src/github.com/customerio'
 export PATH="$CIOSRC/services/bin:$PATH"
 export SERVICES_CONFIG=$CIOSRC/services/config/services.cfg
 
-source $HOME/tmuxinator/tmuxinator.zsh
+source $HOME/.tmuxinator/tmuxinator.zsh
