@@ -1,7 +1,6 @@
 fancy_echo "Updating cio brewskis ..."
-tap "stripe/stripe-mock"
-
 brew bundle --file=- <<EOF
+tap "stripe/stripe-mock"
 brew "mysql@5.7"
 brew "snappy"
 brew "autoconf"
