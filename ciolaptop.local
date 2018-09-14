@@ -3,7 +3,7 @@ brew bundle --file=- <<EOF
 brew "mysql@5.7"
 brew "snappy"
 brew "autoconf"
-brew "stripe/stripe-mock/stripe-mock" restart_service: :changed
+brew "stripe/stripe-mock/stripe-mock", restart_service: :changed
 EOF
 
 fancy_echo "Updating gems ..."
