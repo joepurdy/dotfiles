@@ -1,33 +1,24 @@
 fancy_echo "Updating custom brewskis ..."
-brew_install_or_update 'flow'
-brew_install_or_update 'watchman'
-brew_install_or_update 'mysql'
-
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/homebrew-php
-brew_install_or_update 'php70'
+brew_install_or_update 'mysql@5.7'
 
 fancy_echo "Updating oh-my-zsh ..."
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone https://github.com/bhilburn/powerlevel9k.git ~/dotfiles-local/.oh-my-zsh/custom/themes/powerlevel9k
 
 fancy_echo "Updating JavaScript tools ..."
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-fancy_echo "Configuring Node.js ..."
-find_latest_node() {
-  nvm ls-remote | tail -1
-}
-
-node_version="$(find_latest_node)"
-
-nvm install "$node_version"
-nvm alias latest "$node_version"
-nvm use latest
-npm i -g yarn
+npm i -g ember-cli
+npm i -g phantomjs
 
 fancy_echo "Updating gems ..."
 gem_install_or_update 'rails'
 
 fancy_echo "Updating python packages ..."
 pip install boto
+
+fancy_echo "Install caddyserver ..."
+curl https://getcaddy.com | bash -s personal
+
+if [ -f "$HOME/.ciolaptop.local" ]; then
+  fancy_echo "Running your customizations from ~/.ciolaptop.local ..."
+  # shellcheck disable=SC1090
+  . "$HOME/.ciolaptop.local"
+fi

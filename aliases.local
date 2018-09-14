@@ -2,25 +2,8 @@
 alias c='clear'
 alias cls='clear'
 
-# Productivity
-alias t='todo.sh'
-alias edithosts='sudo vim /etc/hosts'
+# CIO
+alias mux='tmuxinator'
 
-# Applications
-## Sublime
-alias sublime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-
-# PHP
-## Laravel
-alias lara='/Users/joepurdy/Code/Php/Laravel'
-alias hms='/Users/joepurdy/Code/Php/Homestead'
-alias edithomestead.yaml='vim ~/.homestead/Homestead.yaml'
-alias laracogs='$HOME/Code/UtilityScripts/Laracogs.sh'
-alias laranew='composer create-project --prefer-dist laravel/laravel'
-
-# Servers
-alias pbp-p-web01='ssh -i $PBP_SSH $web01'
-alias pbp-c-git01='ssh -i $PBP_SSH $git01'
-alias sor-p-plesk01='ssh -i $SUNWOLF_SSH $plesk01'
-alias rsync-pbp-p-web01='rsync -avz -e "ssh -i $PBP_SSH" $web01:~/rsync ~/ServerHome/pbp-c-web01/'
-alias rsync-pbp-c-git01='rsync -avz -e "ssh -i $PBP_SSH" $git01:~/rsync ~/ServerHome/pbp-c-git01/'
+# Go
+alias kag='killall goreturns'

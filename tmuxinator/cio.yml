@@ -1,0 +1,22 @@
+# ~/.tmuxinator/cio.yml
+
+name: customerio
+root: $CIOSRC
+
+windows:
+  - util:
+      layout: main-vertical
+      panes:
+        - echo "Werk Werk Werk"
+        - sudo caddy
+  - backend:
+      layout: even-vertical
+      panes:
+        - env GOPATH=$CIOSRC/services SERVICES_CONFIG=$CIOSRC/services/config/services.cfg go run services/src/cmds/dev/server.go
+        - env GOPATH=$CIOSRC/edge go run edge/src/servers/edge/server.go -dev=true
+        - cd render; bundle exec rails s -p 5000
+  - frontend:
+      layout: even-vertical
+      panes:
+        - cd ui; ember server
+        - cd unity; bundle exec rails s -p 7000
