@@ -16,6 +16,10 @@ pip install boto
 fancy_echo "Install caddyserver ..."
 curl https://getcaddy.com | bash -s personal
 
+if [ ! -f "$HOME/.secure.local" ]; then
+  touch "$HOME/.secure.local"
+fi
+
 if [ -f "$HOME/.ciolaptop.local" ]; then
   fancy_echo "Running your customizations from ~/.ciolaptop.local ..."
   # shellcheck disable=SC1090
