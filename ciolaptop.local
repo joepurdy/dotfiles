@@ -1,9 +1,9 @@
 fancy_echo "Updating cio brewskis ..."
-brew_install_or_update 'mysql@5.7'
-brew_install_or_update 'snappy'
-brew_install_or_update 'watchman'
-brew_install_or_update 'autoconf'
-brew_install_or_update 'stripe/stripe-mock/stripe-mock'
+brew "mysql@5.7"
+brew "snappy"
+brew "watchman"
+brew "autoconf"
+brew "stripe/stripe-mock/stripe-mock"
 # start a stripe-mock service at login
 brew services start stripe-mock
 

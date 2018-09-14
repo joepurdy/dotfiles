@@ -1,5 +1,4 @@
 fancy_echo "Updating custom brewskis ..."
-brew_install_or_update 'mysql@5.7'
 
 fancy_echo "Updating oh-my-zsh ..."
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
