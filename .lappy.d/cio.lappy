@@ -1,3 +1,5 @@
+#!/bin/sh
+
 fancy_echo "Updating cio brewskis ..."
 brew bundle --file=- <<EOF
 tap "stripe/stripe-mock"

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+fancy_echo "Updating custom brewskis ..."
+brew bundle --file=- <<EOF
+brew "caddy"
+EOF
+
+fancy_echo "Updating oh-my-zsh ..."
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+fancy_echo "Updating JavaScript tools ..."
+npm i -g ember-cli
+npm i -g phantomjs
+
+fancy_echo "Updating gems ..."
+# gem_install_or_update 'rails'
+
+fancy_echo "Updating python packages ..."
+# pip install boto

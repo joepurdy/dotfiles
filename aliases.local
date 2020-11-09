@@ -1,9 +1,0 @@
-# Cmd line
-alias c='clear'
-alias cls='clear'
-
-# CIO
-alias mux='tmuxinator'
-
-# Go
-alias kag='killall goreturns'

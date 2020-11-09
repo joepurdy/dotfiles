@@ -14,45 +14,30 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git)
 
 # User configuration
-export PATH="$HOME/.bin:.git/safe/../../bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$HOME/.bin:$HOME/bin:$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="$HOME/.bin:$HOME/bin:$PATH:.git/safe/../../bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 . $ZSH/oh-my-zsh.sh
-. $HOME/.cio.local
-. $HOME/.secure.local
 
+# ASDF-VM Config
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
-export CPPFLAGS="-I/usr/local/opt/mysql@6.7/include"
-export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
-
 # ssh + gpg
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+export SSH_KEY_PATH="~/.ssh/id_ed25519"
 export GPG_TTY=$(tty)
-
-# mysql
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
-alias zshconfig="vim ~/.zshrc.local"
-alias zshreload=". ~/.zshrc.local"
-
-export PATH="$HOME/.bin:$PATH"
+alias zshconfig="vim ~/.zshrc"
+alias zshreload=". ~/.zshrc"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/joe/devel/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/joe/devel/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '~/devel/google-cloud-sdk/path.zsh.inc' ]; then . '~/devel/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/joe/devel/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/joe/devel/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '~/devel/google-cloud-sdk/completion.zsh.inc' ]; then . '~/devel/google-cloud-sdk/completion.zsh.inc'; fi
