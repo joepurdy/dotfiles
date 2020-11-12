@@ -81,6 +81,13 @@ case "$SHELL" in
     ;;
 esac
 
+# fancy_echo "Updating oh-my-zsh ..."
+# if [ -d "$ZSH" ]; then
+#   omz update
+# else
+#   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# fi
+
 gem_install_or_update() {
   if gem list "$1" --installed > /dev/null; then
     gem update "$@"
@@ -102,7 +109,7 @@ if ! command -v brew >/dev/null; then
     export PATH="/usr/local/bin:$PATH"
 fi
 
-if brew list | grep -Fq brew-cask; then
+if brew list --formula | grep -Fq brew-cask; then
   fancy_echo "Uninstalling old Homebrew-Cask ..."
   brew uninstall --force brew-cask
 fi
@@ -172,7 +179,7 @@ bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
 install_asdf_language "nodejs"
 
 if [ -d "$HOME/.lappy.d/" ]; then
-  for lappyscript in $FILES
+  for lappyscript in $HOME/.lappy.d/*.lappy
   do
     echo "Running customizations from from $lappyscript ..."
     # shellcheck disable=SC1090

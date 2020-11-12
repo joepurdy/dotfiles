@@ -3,10 +3,10 @@
 fancy_echo "Updating custom brewskis ..."
 brew bundle --file=- <<EOF
 brew "caddy"
+brew "httpie"
+brew "direnv"
+brew "imagemagick"
 EOF
-
-fancy_echo "Updating oh-my-zsh ..."
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 fancy_echo "Updating JavaScript tools ..."
 npm i -g ember-cli
