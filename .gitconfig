@@ -1,5 +1,8 @@
 [user]
   name = Joe Purdy
   email = joe@purdy.dev
+  signingKey = D3055E7C547D4864
+[commit]
+  gpgsign = true
 [alias]
   praise = blame

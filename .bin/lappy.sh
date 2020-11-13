@@ -139,10 +139,9 @@ fi
 alias install_asdf_plugin=add_or_update_asdf_plugin
 add_or_update_asdf_plugin() {
   local name="$1"
-  local url="$2"
 
   if ! asdf plugin-list | grep -Fq "$name"; then
-    asdf plugin-add "$name" "$url"
+    asdf plugin-add "$name"
   else
     asdf plugin-update "$name"
   fi
@@ -150,9 +149,10 @@ add_or_update_asdf_plugin() {
 
 # shellcheck disable=SC1090
 source "$HOME/.asdf/asdf.sh"
-add_or_update_asdf_plugin "golang" "https://github.com/kennyp/asdf-golang.git"
-add_or_update_asdf_plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
-add_or_update_asdf_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
+add_or_update_asdf_plugin "golang"
+add_or_update_asdf_plugin "python"
+add_or_update_asdf_plugin "ruby"
+add_or_update_asdf_plugin "nodejs"
 
 install_asdf_language() {
   local language="$1"
@@ -167,6 +167,9 @@ install_asdf_language() {
 
 fancy_echo "Installing latest Go ..."
 install_asdf_language "golang"
+
+fancy_echo "Installing latest Python ..."
+install_asdf_language "python"
 
 fancy_echo "Installing latest Ruby ..."
 install_asdf_language "ruby"
