@@ -17,7 +17,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git)
 
 # User configuration
-export PATH="$HOME/.bin:$HOME/bin:$PATH:.git/safe/../../bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.bin:$PATH:.git/safe/../../bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 . $ZSH/oh-my-zsh.sh
 
